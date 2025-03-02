@@ -34,9 +34,8 @@ Then open the webpage locally to chat.
 
 - So easy you don't even need to do it yourself. Give the CSS and HTML to a model like Qwen Coder and ask it to design new themes for you.
 
-- Two themes are included in the repo.
 
 C64 theme:
 
-[![temp-Images-QAh1w.avif](https://i.postimg.cc/KzZgX28H/temp-Images-QAh1w.avif)](https://postimg.cc/VSVNM2Mq)
+[![temp-Image-Jgk6-Pk.avif](https://i.postimg.cc/Fz5wtpgS/temp-Image-Jgk6-Pk.avif)](https://postimg.cc/Hcz6XQNW)
 
