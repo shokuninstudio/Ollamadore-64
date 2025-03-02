@@ -24,6 +24,8 @@ ollama serve
 
 Then open the webpage locally to chat. 
 
+[![Watch the video](https://img.youtube.com/vi/aT-i4YVLLGE/default.jpg)](https://youtu.be/aT-i4YVLLGE)
+
 # Features
 
 - Chat with supported text documents
