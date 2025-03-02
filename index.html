@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLLAMADORE 64</title>
+    <link rel="stylesheet" href="c64.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>
+        // Ensure Ollama CORS is enabled
+        const checkOllamaAccess = async () => {
+            try {
+                const response = await fetch('http://127.0.0.1:11434/api/tags');
+                if (!response.ok) throw new Error('Ollama server not accessible');
+            } catch (error) {
+                alert('Please ensure Ollama is running and CORS is enabled.\nStart Ollama with: OLLAMA_ORIGINS=* ollama serve');
+            }
+        };
+        checkOllamaAccess();
+    </script>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="model-selector">
+            <div class="title">
+                OLLAMADORE 64
+                <div class="rainbow-logo">
+                    <div class="stripe stripe-red"></div>
+                    <div class="stripe stripe-orange"></div>
+                    <div class="stripe stripe-yellow"></div>
+                    <div class="stripe stripe-green"></div>
+                    <div class="stripe stripe-blue"></div>
+                </div>
+            </div>
+            <select id="modelSelect">
+                <!-- Models will be populated dynamically -->
+            </select>
+        </div>
+        <div class="messages" id="messageList"></div>
+        <form id="chatForm" class="input-form">
+            <input type="text" id="userInput" placeholder="Type your message..." autocomplete="off">
+            <label for="fileInput" class="attach-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"/>
+                </svg>
+            </label>
+            <input type="file" id="fileInput" accept=".txt,.md,.json,.js,.html,.css" multiple hidden>
+            <button type="button" id="saveButton" class="save-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                    <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                    <polyline points="7 3 7 8 15 8"></polyline>
+                </svg>
+            </button>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
